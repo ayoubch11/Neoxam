@@ -1,5 +1,6 @@
 package Entities;
 
-public class EtatEvaluation {
+public enum EtatEvaluation {
+	nonEvaluer,EvaluationEmploye,EvaluationResponsable,EvaluationFinal,Evaluaer
 
 }
