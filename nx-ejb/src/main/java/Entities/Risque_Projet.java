@@ -12,11 +12,13 @@ import javax.persistence.*;
 
 public class Risque_Projet implements Serializable {
 
-	
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private int idRisque;
 	private int idEquipe;
-	private int idproject;
-	private int idProject;
+private int idproject;
+
 	private String date;
 	private static final long serialVersionUID = 1L;
 
@@ -44,13 +46,9 @@ public class Risque_Projet implements Serializable {
 	public void setIdproject(int idproject) {
 		this.idproject = idproject;
 	}   
-	public int getIdProject() {
-		return this.idProject;
-	}
 
-	public void setIdProject(int idProject) {
-		this.idProject = idProject;
-	}   
+
+  
 	public String getDate() {
 		return this.date;
 	}

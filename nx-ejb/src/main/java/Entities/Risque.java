@@ -12,7 +12,9 @@ import javax.persistence.*;
 
 public class Risque implements Serializable {
 
-	
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private int idRisque;
 	private String fait;
 	private String preventif;

@@ -14,7 +14,9 @@ import javax.persistence.*;
 
 public class Projet implements Serializable {
 
-	
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private int idProjet;
 	private String nomProjet;
 	private Date dateDebut;

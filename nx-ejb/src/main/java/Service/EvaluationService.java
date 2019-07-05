@@ -1,5 +1,7 @@
 package Service;
 
-public class EvaluationService extends CrudRepository {
+import Iservice.IEvaluationService;
+
+public class EvaluationService implements IEvaluationService  {
 
 }

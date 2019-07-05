@@ -13,8 +13,9 @@ import javax.persistence.*;
 @Entity
 
 public class Evaluation implements Serializable {
-
-	
+@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private int idEmploye;
 	private int idEvaluation;
 	private String anneEvaluation;
