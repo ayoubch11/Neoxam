@@ -46,10 +46,18 @@ public class Evaluation implements Serializable {
 		this.evaluationFinal = evaluationFinal;
 		this.dateEvaluationFina = dateEvaluationFina;
 	}
+	
+
+	public Evaluation(String selfEvaluation) {
+		super();
+		this.selfEvaluation = selfEvaluation;
+	}
+
 
 	public int getSelfNote() {
 		return selfNote;
 	}
+	
 	
 	public void setSelfNote(int selfNote) {
 		this.selfNote = selfNote;
