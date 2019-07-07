@@ -2,7 +2,7 @@ package Entities;
 
 import java.io.Serializable;
 import java.lang.String;
-import java.util.Date;
+
 
 import javax.persistence.*;
 
@@ -14,39 +14,37 @@ import javax.persistence.*;
 
 public class Evaluation implements Serializable {
 @Id
-	@GeneratedValue
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int idEmploye;
-	private int idEvaluation;
+	//private int idEvaluation;
 	private String anneEvaluation;
 	private int selfNote;
 	private String selfEvaluation;
 	private int responsableNote;
 	private String resEvaluation;
 	private EtatEvaluation etatsEvaluation;
-	private Date dateSelfEvaluation;
-	private Date dateResponsableEvaluation;
+	private String  dateSelfEvaluation;
+	private String  dateResponsableEvaluation;
 	private int evaluationFinal;
-	private Date dateEvaluationFina;
+	private String  dateEvaluationFina;
 	
-	public Evaluation(int idEmploye, int idEvaluation, String anneEvaluation, int selfNote, String selfEvaluation,
-			int responsableNote, String resEvaluation, EtatEvaluation etatsEvaluation, Date dateSelfEvaluation,
-			Date dateResponsableEvaluation, int evaluationFinal, Date dateEvaluationFina) {
+	
+	
+	
+	
+
+	
+
+
+
+
+	public Evaluation() {
 		super();
-		this.idEmploye = idEmploye;
-		this.idEvaluation = idEvaluation;
-		this.anneEvaluation = anneEvaluation;
-		this.selfNote = selfNote;
-		this.selfEvaluation = selfEvaluation;
-		this.responsableNote = responsableNote;
-		this.resEvaluation = resEvaluation;
-		this.etatsEvaluation = etatsEvaluation;
-		this.dateSelfEvaluation = dateSelfEvaluation;
-		this.dateResponsableEvaluation = dateResponsableEvaluation;
-		this.evaluationFinal = evaluationFinal;
-		this.dateEvaluationFina = dateEvaluationFina;
 	}
-	
+
+
+
 
 	public Evaluation(String selfEvaluation) {
 		super();
@@ -86,16 +84,16 @@ public class Evaluation implements Serializable {
 	public void setEtatsEvaluation(EtatEvaluation etatsEvaluation) {
 		this.etatsEvaluation = etatsEvaluation;
 	}
-	public Date getDateSelfEvaluation() {
+	public String  getDateSelfEvaluation() {
 		return dateSelfEvaluation;
 	}
-	public void setDateSelfEvaluation(Date dateSelfEvaluation) {
+	public void setDateSelfEvaluation(String  dateSelfEvaluation) {
 		this.dateSelfEvaluation = dateSelfEvaluation;
 	}
-	public Date getDateResponsableEvaluation() {
+	public String  getDateResponsableEvaluation() {
 		return dateResponsableEvaluation;
 	}
-	public void setDateResponsableEvaluation(Date dateResponsableEvaluation) {
+	public void setDateResponsableEvaluation(String  dateResponsableEvaluation) {
 		this.dateResponsableEvaluation = dateResponsableEvaluation;
 	}
 	public int getEvaluationFinal() {
@@ -104,22 +102,19 @@ public class Evaluation implements Serializable {
 	public void setEvaluationFinal(int evaluationFinal) {
 		this.evaluationFinal = evaluationFinal;
 	}
-	public Date getDateEvaluationFina() {
+	public String getDateEvaluationFina() {
 		return dateEvaluationFina;
 	}
-	public void setDateEvaluationFina(Date dateEvaluationFina) {
+	public void setDateEvaluationFina(String  dateEvaluationFina) {
 		this.dateEvaluationFina = dateEvaluationFina;
 	}
 
 	private static final long serialVersionUID = 1L;
-
-	public Evaluation() {
-		super();
-	}   
+  
 	public int getIdEmploye() {
 		return this.idEmploye;
 	}
-
+/*
 	public void setIdEmploye(int idEmploye) {
 		this.idEmploye = idEmploye;
 	}   
@@ -129,7 +124,7 @@ public class Evaluation implements Serializable {
 
 	public void setIdEvaluation(int idEvaluation) {
 		this.idEvaluation = idEvaluation;
-	}   
+	}   */
 	public String getAnneEvaluation() {
 		return this.anneEvaluation;
 	}
