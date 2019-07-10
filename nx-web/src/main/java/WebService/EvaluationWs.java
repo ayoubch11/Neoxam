@@ -1,9 +1,11 @@
 package WebService;
 
-import javax.ejb.EJB;
+import java.util.List;
 
+import javax.ejb.EJB;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -18,19 +20,28 @@ import Service.EvaluationService;
 @Path("evaluation")
 
 @ManagedBean
-@RequestScoped
+@ApplicationScoped
 public class EvaluationWs {
 	
 	
 	
 	@EJB
-	IEvaluationService es =new EvaluationService();
+	IEvaluationService es;
 	
-	/*@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String sayHello(){
-		return "hello from my web service";
-	}*/
+	
+@GET
+	
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response ShowAll() {
+		List<Evaluation> EV=es.getAllEvaluation();
+		
+		if (EV.isEmpty()==false) {
+			return Response.status(Status.OK).entity(es.getAllEvaluation()).build();
+		}
+		return Response.status(Status.NOT_FOUND).build();
+
+	}
+	
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML })
 	public Response addEvaluation(Evaluation eval){
@@ -51,6 +62,24 @@ public class EvaluationWs {
 			return Response.status(Status.OK).entity(es.getEvaluation(1)).build();
 		
 	}*/
-	
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response UPDATE(Evaluation eval) {
+		if (es.update(eval) != null)
+			return Response.status(Status.OK).build();
+		return Response.status(Status.NOT_FOUND).build();
+	}
+
+	@DELETE
+	@Path("{code}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response DeleteRisk(@PathParam(value = "code") String id) {
+
+		if (es.DeleteEvaluation(id)) {
+			return Response.status(Status.OK).build();
+		}
+		return Response.status(Status.NOT_FOUND).build();
+
+	}
 
 }

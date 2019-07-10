@@ -1,3 +1,4 @@
+WebService\TestWs.class
+WebService\RESTActivator.class
 WebService\EvaluationWs.class
 WebService\HelloRessources.class
-WebService\RESTActivator.class

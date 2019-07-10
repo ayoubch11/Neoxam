@@ -1,5 +1,8 @@
+Iservice\ITestService.class
+Service\TestService.class
 Entities\EtatEvaluation.class
 Entities\Risque.class
+Entities\Test.class
 Entities\Evaluation.class
 Entities\Risque_Projet.class
 Iservice\IEvaluationService.class

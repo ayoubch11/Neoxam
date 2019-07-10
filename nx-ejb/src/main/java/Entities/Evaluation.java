@@ -14,8 +14,8 @@ import javax.persistence.*;
 
 public class Evaluation implements Serializable {
 @Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	@Column(name = "id")
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int idEmploye;
 	//private int idEvaluation;
 	private String anneEvaluation;
@@ -41,15 +41,13 @@ public class Evaluation implements Serializable {
 
 	public Evaluation() {
 		super();
+		
 	}
 
 
 
 
-	public Evaluation(String selfEvaluation) {
-		super();
-		this.selfEvaluation = selfEvaluation;
-	}
+	
 
 
 	public int getSelfNote() {
