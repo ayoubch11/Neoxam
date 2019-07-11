@@ -53,15 +53,18 @@ public class EvaluationService implements IEvaluationService {
 	}
 
 	@Override
-	public boolean DeleteEvaluation(String Id) {
-		Evaluation OldOne = this.getEvalById(Id);
-		if (OldOne != null) {
-			em.remove(OldOne);
+	public boolean delete(long id) {
 
+		try {
+			Evaluation ee = em.find(Evaluation.class, id);
+			if (ee != null)
+				em.remove(ee);
 			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-
-		return false;
+		
 	}
 
 	

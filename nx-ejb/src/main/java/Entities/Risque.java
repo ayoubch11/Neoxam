@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Risque implements Serializable {
 
 	@Id
-
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idRisque;
 	private String fait;
 	private String preventif;

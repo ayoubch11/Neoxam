@@ -18,10 +18,11 @@ public interface IEvaluationService  {
 
 	//boolean UpdateEvaluation(String Id, Evaluation R);
 
-	boolean DeleteEvaluation(String Id);
 	
 	String getTest();
 
 	Evaluation update(Evaluation aval);
+
+	boolean delete(long id);
 
 }

@@ -71,15 +71,13 @@ public class EvaluationWs {
 	}
 
 	@DELETE
-	@Path("{code}")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response DeleteRisk(@PathParam(value = "code") String id) {
+	@Path("{idEmploye}")
+	public Response delete(@QueryParam(value = "idEmploye") long id) {
 
-		if (es.DeleteEvaluation(id)) {
+		if (es.delete(id)) {
 			return Response.status(Status.OK).build();
 		}
 		return Response.status(Status.NOT_FOUND).build();
-
 	}
 
 }
